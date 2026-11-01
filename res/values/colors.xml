@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#F3EDE3</color>
+    <color name="surface">#FFFDF8</color>
+    <color name="ink">#2D2823</color>
+    <color name="ink_soft">#514A42</color>
+    <color name="muted">#776C5F</color>
+    <color name="muted_light">#9B8E80</color>
+    <color name="line">#E5D9CA</color>
+    <color name="accent">#C95042</color>
+    <color name="accent_dark">#B04437</color>
+    <color name="accent_pressed">#AE3E32</color>
+    <color name="green">#327B5C</color>
+    <color name="green_dark">#2A684D</color>
+    <color name="error">#D06152</color>
+    <color name="input_bg">#FBF6EE</color>
+    <color name="input_stroke">#DED1C0</color>
+    <color name="input_error_fill">#FDF2EE</color>
+    <color name="input_success_fill">#F0F8F3</color>
+    <color name="green_border">#4A9273</color>
+    <color name="card_stroke">#E8DCCD</color>
+    <color name="toggle_bg">#ECE3D6</color>
+    <color name="toggle_stroke">#DED1C1</color>
+    <color name="key_fill">#FFFDF8</color>
+    <color name="key_stroke">#DED1C1</color>
+    <color name="key_pressed_fill">#F7E5DE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="stat_correct">#2F7B59</color>
+    <color name="stat_wrong">#BE4D40</color>
+    <color name="stat_streak">#A56E2D</color>
+    <color name="icon_bg">#F3EDE3</color>
+</resources>

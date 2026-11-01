@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">假名打字练习</string>
+    <string name="header_subtitle">かなタイピング · KANA TYPING</string>
+    <string name="toggle_hiragana">平假名</string>
+    <string name="toggle_katakana">片假名</string>
+    <string name="mode_forward">假名→罗马音</string>
+    <string name="mode_reverse">罗马音→假名</string>
+    <string name="level_seion">清音</string>
+    <string name="level_dakuon">浊音</string>
+    <string name="level_all">全部</string>
+    <string name="prompt_forward">请输入这个假名的罗马音</string>
+    <string name="prompt_reverse">请选出这个罗马音对应的假名</string>
+    <string name="input_hint_forward">点按下方字母键</string>
+    <string name="input_hint_reverse">点选下方正确的假名</string>
+    <string name="input_description">输入框</string>
+    <string name="neutral_forward_main">输入正确的罗马音</string>
+    <string name="neutral_forward_sub">点击下方字母键开始</string>
+    <string name="neutral_reverse_main">选出对应的假名</string>
+    <string name="neutral_reverse_sub">点击下方假名开始</string>
+    <string name="next">下一题</string>
+    <string name="next_description">进入下一题</string>
+    <string name="stat_correct">答对</string>
+    <string name="stat_wrong">答错</string>
+    <string name="stat_accuracy">正确率</string>
+    <string name="stat_streak">连续答对</string>
+    <string name="keyboard_hint">字母不区分大小写 · 长按「删除」清空</string>
+    <string name="choices_hint">点击假名选项 · 答完会朗读正确读音</string>
+    <string name="keyboard_description">屏幕字母键盘</string>
+    <string name="kana_description">当前假名</string>
+    <string name="app_icon_description">假名打字练习图标</string>
+    <string name="choice_description">假名选项 %1$s</string>
+</resources>
