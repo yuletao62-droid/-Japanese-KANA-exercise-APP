@@ -21,6 +21,13 @@ RAW = ROOT / "res" / "raw"
 VOICE = "ja-JP-NanamiNeural"
 RATE = "-10%"
 
+# Nanami's isolated "い" ends with a short extra blip that sounds like "iki".
+# A terminal punctuation mark gives a clean single vowel without changing the
+# duration of the clip much.
+TEXT_OVERRIDES = {
+    "i": "い。",
+}
+
 ENTRY = re.compile(r'new Kana\("(.)", "(.)", "([^"]+)"')
 
 
@@ -34,8 +41,8 @@ def load_kana() -> list[tuple[str, str]]:
             raise RuntimeError(f"duplicate primary romaji: {primary}")
         seen.add(primary)
         entries.append((hiragana, primary))
-    if len(entries) != 66:
-        raise RuntimeError(f"expected 66 kana, found {len(entries)}")
+    if len(entries) != 71:
+        raise RuntimeError(f"expected 71 kana, found {len(entries)}")
     return entries
 
 
@@ -48,7 +55,8 @@ async def generate() -> None:
             print(f"[{index:02d}/{len(entries)}] skip {target.name}")
             continue
         print(f"[{index:02d}/{len(entries)}] {hiragana} -> {target.name}")
-        communicate = edge_tts.Communicate(hiragana, VOICE, rate=RATE)
+        text = TEXT_OVERRIDES.get(primary, hiragana)
+        communicate = edge_tts.Communicate(text, VOICE, rate=RATE)
         await communicate.save(str(target))
         if not target.exists() or target.stat().st_size <= 1000:
             raise RuntimeError(f"failed to generate {target}")

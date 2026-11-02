@@ -31,7 +31,8 @@ public final class GameSessionTest {
     private static void testKanaTable() {
         check(KanaData.SEION.length == 46, "expected 46 seion kana");
         check(KanaData.DAKUON.length == 20, "expected 20 dakuten kana");
-        check(KanaData.ALL.length == 66, "expected 66 total kana");
+        check(KanaData.HANDAKUON.length == 5, "expected 5 handakuten kana");
+        check(KanaData.ALL.length == 71, "expected 71 total kana");
 
         HashSet<String> hiragana = new HashSet<>();
         HashSet<String> katakana = new HashSet<>();
@@ -48,9 +49,9 @@ public final class GameSessionTest {
             check(kana.katakana.codePointAt(0) - kana.hiragana.codePointAt(0) == 0x60,
                     "katakana offset for " + kana.hiragana);
         }
-        check(hiragana.size() == 66, "duplicate hiragana");
-        check(katakana.size() == 66, "duplicate katakana");
-        check(spellings.size() == 72, "unexpected number of accepted spellings");
+        check(hiragana.size() == 71, "duplicate hiragana");
+        check(katakana.size() == 71, "duplicate katakana");
+        check(spellings.size() == 77, "unexpected number of accepted spellings");
 
         Kana ji = find("じ");
         check(java.util.Arrays.asList(ji.romaji).contains("ji"), "ji for じ");
@@ -60,6 +61,9 @@ public final class GameSessionTest {
         check(di.primaryRomaji().equals("di"), "ぢ primary romaji must be di");
         Kana du = find("づ");
         check(du.primaryRomaji().equals("du"), "づ primary romaji must be du");
+        Kana pa = find("ぱ");
+        check(pa.primaryRomaji().equals("pa"), "ぱ primary romaji must be pa");
+        check(pa.katakana.equals("パ"), "ぱ katakana");
     }
 
     private static void testNormalizationAndClassification() {
@@ -112,7 +116,7 @@ public final class GameSessionTest {
         for (int i = 0; i < 2500; i += 1) {
             seen.add(session.newQuestion().hiragana);
         }
-        check(seen.size() == 66, "all kana should be reachable");
+        check(seen.size() == 71, "all kana should be reachable");
     }
 
     private static void testScriptSwitch() {
@@ -152,8 +156,26 @@ public final class GameSessionTest {
         check(session.getPoolSize() == 20, "dakuten pool size");
         check(containsKana(KanaData.DAKUON, session.current.hiragana), "dakuten question");
         check(!session.switchLevel(KanaLevel.DAKUON), "same level is a no-op");
+        check(session.switchLevel(KanaLevel.HANDAKUON), "switch to handakuten");
+        check(session.getLevel() == KanaLevel.HANDAKUON, "level set to handakuten");
+        check(session.getPoolSize() == 5, "handakuten pool size");
+        check(containsKana(KanaData.HANDAKUON, session.current.hiragana), "handakuten question");
+        for (int i = 0; i < 100; i += 1) {
+            List<Kana> choices = session.buildChoices(8);
+            check(choices.size() == 8, "expected 8 choices for handakuten");
+            check(choices.contains(session.current), "choices contain handakuten answer");
+            HashSet<String> glyphs = new HashSet<>();
+            for (Kana choice : choices) {
+                glyphs.add(choice.hiragana);
+                check(containsKana(KanaData.ALL, choice.hiragana), "handakuten choice outside all kana");
+            }
+            check(glyphs.size() == 8, "handakuten choices must be unique");
+            check(containsKana(KanaData.HANDAKUON, session.current.hiragana),
+                    "handakuten question outside handakuten set");
+            session.newQuestion();
+        }
         check(session.switchLevel(KanaLevel.ALL), "switch to all");
-        check(session.getPoolSize() == 66, "all pool size");
+        check(session.getPoolSize() == 71, "all pool size");
 
         for (int i = 0; i < 100; i += 1) {
             List<Kana> choices = session.buildChoices(8);

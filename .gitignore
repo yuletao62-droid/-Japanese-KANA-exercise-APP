@@ -1,0 +1,12 @@
+# Android build output
+/build/
+
+# ADB runtime logs
+/.adb-temp/
+
+# Local install scratch files
+/.install.apk
+*.idsig
+
+# Local audio debugging assets
+/.audio-debug/

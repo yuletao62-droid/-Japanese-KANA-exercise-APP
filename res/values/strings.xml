@@ -8,6 +8,7 @@
     <string name="mode_reverse">罗马音→假名</string>
     <string name="level_seion">清音</string>
     <string name="level_dakuon">浊音</string>
+    <string name="level_handakuon">半浊音</string>
     <string name="level_all">全部</string>
     <string name="prompt_forward">请输入这个假名的罗马音</string>
     <string name="prompt_reverse">请选出这个罗马音对应的假名</string>

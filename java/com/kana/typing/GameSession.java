@@ -105,9 +105,10 @@ public final class GameSession {
      * containing the current kana.
      */
     public List<Kana> buildChoices(int count) {
-        int desired = Math.min(Math.max(1, count), pool.length);
+        Kana[] source = pool.length >= count ? pool : KanaData.ALL;
+        int desired = Math.min(Math.max(1, count), source.length);
         List<Kana> distractors = new ArrayList<>();
-        for (Kana kana : pool) {
+        for (Kana kana : source) {
             if (kana != current) {
                 distractors.add(kana);
             }

@@ -4,6 +4,7 @@ package com.kana.typing;
 public enum KanaLevel {
     SEION("清音"),
     DAKUON("浊音"),
+    HANDAKUON("半浊音"),
     ALL("全部");
 
     public final String label;

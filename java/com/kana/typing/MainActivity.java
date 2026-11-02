@@ -71,6 +71,7 @@ public final class MainActivity extends Activity implements KeyboardView.Listene
     private TextView modeReverse;
     private TextView levelSeion;
     private TextView levelDakuon;
+    private TextView levelHandakuon;
     private TextView levelAll;
     private TextView statCorrect;
     private TextView statWrong;
@@ -127,6 +128,7 @@ public final class MainActivity extends Activity implements KeyboardView.Listene
         modeReverse = findViewById(R.id.mode_reverse);
         levelSeion = findViewById(R.id.level_seion);
         levelDakuon = findViewById(R.id.level_dakuon);
+        levelHandakuon = findViewById(R.id.level_handakuon);
         levelAll = findViewById(R.id.level_all);
         statCorrect = findViewById(R.id.stat_correct);
         statWrong = findViewById(R.id.stat_wrong);
@@ -180,6 +182,12 @@ public final class MainActivity extends Activity implements KeyboardView.Listene
             @Override
             public void onClick(View v) {
                 selectLevel(KanaLevel.DAKUON);
+            }
+        });
+        levelHandakuon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectLevel(KanaLevel.HANDAKUON);
             }
         });
         levelAll.setOnClickListener(new View.OnClickListener() {
@@ -272,6 +280,7 @@ public final class MainActivity extends Activity implements KeyboardView.Listene
         styleSegment(modeReverse, practiceMode == PracticeMode.ROMAJI_TO_KANA);
         styleSegment(levelSeion, session.getLevel() == KanaLevel.SEION);
         styleSegment(levelDakuon, session.getLevel() == KanaLevel.DAKUON);
+        styleSegment(levelHandakuon, session.getLevel() == KanaLevel.HANDAKUON);
         styleSegment(levelAll, session.getLevel() == KanaLevel.ALL);
     }
 
@@ -598,8 +607,8 @@ public final class MainActivity extends Activity implements KeyboardView.Listene
             }
         }
         Log.i(TAG, "bundled audio clips loaded: " + audioResources.size());
-        if (audioResources.size() != 66) {
-            Log.w(TAG, "expected 66 audio clips, found " + audioResources.size());
+        if (audioResources.size() != 71) {
+            Log.w(TAG, "expected 71 audio clips, found " + audioResources.size());
         }
     }
 

@@ -77,17 +77,29 @@ public final class KanaData {
             new Kana("ぼ", "ボ", "bo")
     };
 
+    public static final Kana[] HANDAKUON = {
+            new Kana("ぱ", "パ", "pa"),
+            new Kana("ぴ", "ピ", "pi"),
+            new Kana("ぷ", "プ", "pu"),
+            new Kana("ぺ", "ペ", "pe"),
+            new Kana("ぽ", "ポ", "po")
+    };
+
     public static final Kana[] ALL;
 
     static {
-        ALL = new Kana[SEION.length + DAKUON.length];
+        ALL = new Kana[SEION.length + DAKUON.length + HANDAKUON.length];
         System.arraycopy(SEION, 0, ALL, 0, SEION.length);
         System.arraycopy(DAKUON, 0, ALL, SEION.length, DAKUON.length);
+        System.arraycopy(HANDAKUON, 0, ALL, SEION.length + DAKUON.length, HANDAKUON.length);
     }
 
     public static Kana[] forLevel(KanaLevel level) {
         if (level == KanaLevel.DAKUON) {
             return DAKUON;
+        }
+        if (level == KanaLevel.HANDAKUON) {
+            return HANDAKUON;
         }
         if (level == KanaLevel.ALL) {
             return ALL;

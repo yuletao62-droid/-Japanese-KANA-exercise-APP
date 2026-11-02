@@ -102,8 +102,9 @@
         android:paddingBottom="6dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="34dp"
+            android:layout_weight="1"
             android:background="@drawable/toggle_bg"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -111,8 +112,9 @@
 
             <TextView
                 android:id="@+id/mode_forward"
-                android:layout_width="72dp"
+                android:layout_width="0dp"
                 android:layout_height="28dp"
+                android:layout_weight="1"
                 android:background="@drawable/toggle_active"
                 android:clickable="true"
                 android:focusable="true"
@@ -124,8 +126,9 @@
 
             <TextView
                 android:id="@+id/mode_reverse"
-                android:layout_width="72dp"
+                android:layout_width="0dp"
                 android:layout_height="28dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:clickable="true"
                 android:focusable="true"
@@ -136,15 +139,11 @@
                 android:textSize="10sp" />
         </LinearLayout>
 
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" />
-
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="34dp"
             android:layout_marginStart="6dp"
+            android:layout_weight="1"
             android:background="@drawable/toggle_bg"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -152,8 +151,9 @@
 
             <TextView
                 android:id="@+id/level_seion"
-                android:layout_width="40dp"
+                android:layout_width="0dp"
                 android:layout_height="28dp"
+                android:layout_weight="1"
                 android:background="@drawable/toggle_active"
                 android:clickable="true"
                 android:focusable="true"
@@ -165,8 +165,9 @@
 
             <TextView
                 android:id="@+id/level_dakuon"
-                android:layout_width="40dp"
+                android:layout_width="0dp"
                 android:layout_height="28dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:clickable="true"
                 android:focusable="true"
@@ -177,9 +178,24 @@
                 android:textSize="10sp" />
 
             <TextView
-                android:id="@+id/level_all"
-                android:layout_width="40dp"
+                android:id="@+id/level_handakuon"
+                android:layout_width="0dp"
                 android:layout_height="28dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/level_handakuon"
+                android:textColor="@color/muted"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/level_all"
+                android:layout_width="0dp"
+                android:layout_height="28dp"
+                android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:clickable="true"
                 android:focusable="true"
