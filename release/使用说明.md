@@ -4,6 +4,16 @@
 
 一个离线日语假名罗马音练习应用，支持双向练习：看假名打罗马音，或看罗马音选假名。每道题答完后自动播放内置的日语发音。
 
+> **[⬇ 直接下载 APK · v1.1.2（约 811 KB）](<https://github.com/yuletao62-droid/-Japanese-KANA-exercise-APP/raw/master/release/%E5%81%87%E5%90%8D%E6%89%93%E5%AD%97%E7%BB%83%E4%B9%A0.apk>)**
+
+## 下载
+
+[**⬇ 直接下载 APK（v1.1.2 / 约 811 KB）**](<https://github.com/yuletao62-droid/-Japanese-KANA-exercise-APP/raw/master/release/%E5%81%87%E5%90%8D%E6%89%93%E5%AD%97%E7%BB%83%E4%B9%A0.apk>)
+
+- 文件名：`假名打字练习.apk`
+- SHA256：`5CA4C4BD0CF7175FDCCEAD72FB1E1F840AC85B243E23600697F98C10AAAD3C7F`
+- 直链：`https://github.com/yuletao62-droid/-Japanese-KANA-exercise-APP/raw/master/release/%E5%81%87%E5%90%8D%E6%89%93%E5%AD%97%E7%BB%83%E4%B9%A0.apk`
+
 ## v1.1.2 更新
 
 - 修复「い」单独发音时会多出一小段尾音、听起来像「いき」的问题。
